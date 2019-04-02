@@ -10,9 +10,24 @@ import Products from "./pages/ProductsPage";
 import SingleProduct from "./pages/SingleProductPage";
 import Default from "./pages/Default";
 
+import { Route, Switch } from "react-router-dom";
+
 class App extends Component {
   render() {
-    return <h1>hello from the app</h1>;
+    return (
+      <>
+        {/* navbar, sidebar, cart, footer */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/card" component={Card} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/products" component={Products} />
+          <Route path="/products/:id" component={SingleProduct} />
+          <Route component={Default} />
+        </Switch>
+      </>
+    );
   }
 }
 
