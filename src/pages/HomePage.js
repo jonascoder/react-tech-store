@@ -1,5 +1,6 @@
 import React from "react";
 import { ProductConsumer } from "../context";
+import { Hero } from "../components/Hero";
 export default function HomePage() {
   return (
     <>
