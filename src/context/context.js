@@ -15,7 +15,7 @@ class ProductProvider extends Component {
     cartItems: 0,
     cartSubTotal: 0,
     cartTax: 0,
-    carTotal: 0,
+    cartTotal: 0,
     storeProducts: [],
     filteredProducts: [],
     featuredProducts: [],
@@ -96,7 +96,7 @@ class ProductProvider extends Component {
       cartItems: totals.cartItems,
       cartSubTotal: totals.subTotal,
       cartTax: totals.tax,
-      carTotal: totals.total
+      cartTotal: totals.total
     });
   };
   // sync storage
@@ -145,7 +145,7 @@ class ProductProvider extends Component {
   };
   // hanldle sart
   handleCart = () => {
-    this.setState({ cartOpen: !this.state.sidebarOpen });
+    this.setState({ cartOpen: !this.state.cartOpen });
   };
   //close cart
   closeCart = () => {
