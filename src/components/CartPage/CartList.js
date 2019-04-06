@@ -23,9 +23,9 @@ export default function CartList() {
                     <CartItem
                       key={item.id}
                       cartItem={item}
-                      increment={item.increment}
-                      decrement={item.decrement}
-                      removeItem={item.removeItem}
+                      increment={increment}
+                      decrement={decrement}
+                      removeItem={removeItem}
                     />
                   ))}
                 </>
