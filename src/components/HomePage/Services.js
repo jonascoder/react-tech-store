@@ -9,21 +9,21 @@ export default class Services extends Component {
         icon: <FaDolly />,
         title: "free shipping",
         text:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, vero!"
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus."
       },
       {
         id: 2,
         icon: <FaRedo />,
         title: "30 days return policy",
         text:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, vero!"
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus."
       },
       {
         id: 3,
         icon: <FaDollarSign />,
         title: "secured payment",
         text:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, vero!"
+          " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, accusamus."
       }
     ]
   };
@@ -50,6 +50,7 @@ export default class Services extends Component {
     );
   }
 }
+
 const ServicesWrapper = styled.section`
   background: rgba(95, 183, 234, 0.5);
   .service-icon {

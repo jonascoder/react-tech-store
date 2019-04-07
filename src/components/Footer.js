@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ProductConsumer } from "../context";
+
 export default function Footer() {
   return (
     <ProductConsumer>
@@ -11,7 +12,7 @@ export default function Footer() {
               <div className="row">
                 <div className="col-md-6">
                   <p className="text-capitalize">
-                    copirigth &copy; tech store {new Date().getFullYear()}. all
+                    copyright &copy; tech store {new Date().getFullYear()}. all
                     rights reserved{" "}
                   </p>
                 </div>
@@ -30,13 +31,14 @@ export default function Footer() {
     </ProductConsumer>
   );
 }
+
 const FooterWrapper = styled.footer`
   background: var(--darkGrey);
   color: var(--mainWhite);
   .icon {
     font-size: 1.5rem;
     color: var(--mainWhite);
-    transition: var(--mainTransition);
+    transition: var(--mainTranstion);
   }
   .icon:hover {
     color: var(--primaryColor);

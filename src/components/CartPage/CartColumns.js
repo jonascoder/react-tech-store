@@ -8,32 +8,32 @@ export default function CartColumns() {
         <div className="col-lg-2">
           <p className="text-uppercase">products</p>
         </div>
-        {/* end Single column */}
+        {/* end of single column */}
         {/* single column */}
         <div className="col-lg-2">
           <p className="text-uppercase">name of product</p>
         </div>
-        {/* end Single column */}
+        {/* end of single column */}
         {/* single column */}
         <div className="col-lg-2">
           <p className="text-uppercase">price</p>
         </div>
-        {/* end Single column */}
+        {/* end of single column */}
         {/* single column */}
         <div className="col-lg-2">
           <p className="text-uppercase">quantity</p>
         </div>
-        {/* end Single column */}
+        {/* end of single column */}
         {/* single column */}
         <div className="col-lg-2">
           <p className="text-uppercase">remove</p>
         </div>
-        {/* end Single column */}
+        {/* end of single column */}
         {/* single column */}
         <div className="col-lg-2">
           <p className="text-uppercase">total</p>
         </div>
-        {/* end Single column */}
+        {/* end of single column */}
       </div>
     </div>
   );

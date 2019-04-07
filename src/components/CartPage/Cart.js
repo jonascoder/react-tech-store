@@ -3,7 +3,6 @@ import Title from "../Title";
 import CartColumns from "./CartColumns";
 import CartList from "./CartList";
 import CartTotals from "./CartTotals";
-
 export default function Cart() {
   return (
     <section className="py-5">
@@ -13,7 +12,7 @@ export default function Cart() {
       </div>
       {/* cart columns */}
       <CartColumns />
-      {/* cart list   */}
+      {/* cart list */}
       <CartList />
       {/* cart totals */}
       <CartTotals />

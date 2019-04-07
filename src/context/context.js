@@ -15,12 +15,12 @@ class ProductProvider extends Component {
     cartItems: 0,
     cartSubTotal: 0,
     cartTax: 0,
-    cartTotal: 0,
+    carTotal: 0,
     storeProducts: [],
     filteredProducts: [],
     featuredProducts: [],
     singleProduct: {},
-    loading: false
+    loading: true
   };
   componentDidMount() {
     //from contentful items
@@ -77,6 +77,7 @@ class ProductProvider extends Component {
       subTotal += item.total;
       cartItems += item.count;
     });
+
     subTotal = parseFloat(subTotal.toFixed(2));
     let tax = subTotal * 0.2;
     tax = parseFloat(tax.toFixed(2));
@@ -155,8 +156,7 @@ class ProductProvider extends Component {
   openCart = () => {
     this.setState({ cartOpen: true });
   };
-
-  // cart funcionality
+  //  cart functionality
   // increment
   increment = id => {
     let tempCart = [...this.state.cart];
@@ -178,8 +178,29 @@ class ProductProvider extends Component {
   };
   // decrement
   decrement = id => {
-    console.log(id);
-  }; // removeItem
+    let tempCart = [...this.state.cart];
+    const cartItem = tempCart.find(item => item.id === id);
+
+    cartItem.count = cartItem.count - 1;
+    if (cartItem.count === 0) {
+      this.removeItem(id);
+    } else {
+      cartItem.total = cartItem.count * cartItem.price;
+      cartItem.total = parseFloat(cartItem.total.toFixed(2));
+      this.setState(
+        () => {
+          return {
+            cart: [...tempCart]
+          };
+        },
+        () => {
+          this.addTotals();
+          this.syncStorage();
+        }
+      );
+    }
+  };
+  // removeItem
   removeItem = id => {
     let tempCart = [...this.state.cart];
     tempCart = tempCart.filter(item => item.id !== id);
@@ -192,10 +213,19 @@ class ProductProvider extends Component {
         this.syncStorage();
       }
     );
-  }; // clearCart
-  clearCart = () => {
-    console.log("awesome you just clear the cart");
   };
+  clearCart = () => {
+    this.setState(
+      {
+        cart: []
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
+  };
+
   render() {
     return (
       <ProductContext.Provider

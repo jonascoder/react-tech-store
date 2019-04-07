@@ -13,7 +13,7 @@ export default function CartTotals() {
                   className="btn btn-outline-danger text-capitalize mb-4"
                   onClick={clearCart}
                 >
-                  clear all
+                  clear cart
                 </button>
                 <h3>subtotal : ${cartSubTotal}</h3>
                 <h3>tax : ${cartTax}</h3>

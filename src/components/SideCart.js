@@ -2,24 +2,27 @@ import React from "react";
 import { ProductConsumer } from "../context";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { FaCreditCard } from "react-icons/fa";
 export default function SideCart() {
   return (
     <ProductConsumer>
       {value => {
         const { cartOpen, closeCart, cart, cartTotal } = value;
-
         return (
           <CartWrapper show={cartOpen} onClick={closeCart}>
             <ul>
               {cart.map(item => {
                 return (
                   <li key={item.id} className="cart-item mb-4">
-                    <img width="35" src={`../${item.image}`} alt="cart-item" />
+                    <img
+                      width="35"
+                      src={`../${item.image}`}
+                      // src={item.image}
+                      alt="cart item"
+                    />
                     <div className="mt-3">
-                      <h6 className="text-upercase">{item.title}</h6>
+                      <h6 className="text-uppercase">{item.title}</h6>
                       <h6 className="text-title text-capitalize">
-                        amount: {item.count}
+                        amount : {item.count}
                       </h6>
                     </div>
                   </li>
@@ -27,7 +30,7 @@ export default function SideCart() {
               })}
             </ul>
             <h4 className="text-capitalize text-main">
-              cart total: ${cartTotal}
+              cart total : ${cartTotal}
             </h4>
             <div className="text-center my-5">
               <Link to="/cart" className="main-link">
