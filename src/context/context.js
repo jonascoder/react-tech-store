@@ -181,7 +181,17 @@ class ProductProvider extends Component {
     console.log(id);
   }; // removeItem
   removeItem = id => {
-    console.log(id);
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter(item => item.id !== id);
+    this.setState(
+      {
+        cart: [...tempCart]
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
   }; // clearCart
   clearCart = () => {
     console.log("awesome you just clear the cart");

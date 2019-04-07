@@ -2,7 +2,7 @@ import React from "react";
 import { ProductConsumer } from "../context";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaCreditCard } from "react-icons/fa";
+// import { FaCreditCard } from "react-icons/fa";
 export default function SideCart() {
   return (
     <ProductConsumer>
