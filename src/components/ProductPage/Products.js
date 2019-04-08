@@ -2,6 +2,7 @@ import React from "react";
 import { ProductConsumer } from "../../context";
 import Title from "../Title";
 import Product from "../Product";
+import ProductFilter from "./ProductFilter";
 
 export default function Products() {
   return (
@@ -13,6 +14,8 @@ export default function Products() {
             <div className="container">
               {/* Title */}
               <Title center title="our products" />
+              {/* Product filter */}
+              <ProductFilter />
               {/* Products */}
               <div className="row py-5">
                 {filteredProducts.map(product => {
