@@ -15,12 +15,14 @@ export default function ProductFilter() {
           handleChange,
           storeProducts
         } = value;
+
         let companies = new Set();
         companies.add("all");
         for (let product in storeProducts) {
           companies.add(storeProducts[product]["company"]);
         }
         companies = [...companies];
+
         return (
           <div className="row my-5">
             <div className="col-10 mx-auto">
